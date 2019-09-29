@@ -1,3 +1,4 @@
+import java.security.MessageDigest;
 import java.util.Scanner;
 
 public class Main{
@@ -14,38 +15,55 @@ public class Main{
             double measure = Double.parseDouble(input[0]); // doubles the inputted number 
             checkUnit unit = new checkUnit(input[1]);    
             checkUnit convertCheckUnit = new checkUnit(convert);
+            int start = unit.numberUnit();
+            int goal = convertCheckUnit.numberUnit();
             //line 15 gets first unit, line 16 captures unit to convert to
-            if(unit.numberUnit() == 0 || convertCheckUnit.numberUnit() == 0){
+            if(start == 0 || goal == 0){
                 System.out.println("Please enter correct units(mm,cm,m,km,inch,feet,yard,mile,");
                 main(args);
             }
 
             boolean way = true; //boolean is used to tell the code which direction to convert in order. this slows down the code but adds flexibility
-            if (unit.numberUnit()>= convertCheckUnit.numberUnit()){
-                way = false;
-            } 
-            //Now we turn all the types into objects 
-            if(unit.numberUnit() == 1-7){
-                if((unit.numberUnit() != 1-3 && convertCheckUnit.numberUnit() != 4-7) || (unit.numberUnit() != 4-7 && convertCheckUnit.numberUnit() != 1-3)){
-                    if(way == true){
-                        for(int i = unit.numberUnit(); i <= convertCheckUnit.numberUnit();i++){
-                            switch(unit.numberUnit()){
-                                case 1:
-                                
-                                break;
-                                case 2:
-
-                                break;
-                            }
+           
+            //here we start the maths! 
+            int loop = Math.abs(start - goal);
+            if(1 >= start && start <= 7){
+                System.out.println(measure +" "+ start +" "+ goal +" "+loop);
+                if((start > 3 && goal < 4) || (start < 4 && goal > 3)){
+                    System.out.println(measure +" "+ start);
+                    if (start>= goal){
+                        way = false;
+                        start -= 1;
+                    }
+                    for(int i = 0; i <= loop;i++){
+                        Metric Hold = new Metric(measure,way);
+                        Imperial Holds = new Imperial(measure,way);
+                        switch(start){
+                            case 1:
+                            measure = Hold.MMandCM();
+                            break;
+                            case 2:
+                            measure = Hold.CMandM();
+                            break;
+                            case 3:
+                            measure = Hold.MandKM();
+                            break;
+                            case 4:
+                            measure = Holds.InchandFeet();
+                            break;
+                            case 5:
+                            measure = Holds.FeetandYards();
+                            break;
+                            case 6:
+                            measure = Holds.YardsandMiles();
+                            break;
+                        
                         }
-                    }else{
-                        for(int i = unit.numberUnit(); i >= convertCheckUnit.numberUnit();i--){
-                            
-                        }
+                        System.out.println(measure);
                     }
                 }
-
-            }else if(unit.numberUnit() == 8-14){
+                    
+            }else if(8 =< unit.numberUnit() && unit.numberUnit() =< 14){
 
             }
             

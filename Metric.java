@@ -6,26 +6,26 @@ public class Metric extends Convert{
     }
     public double MMandCM(){
         if(way == true){
-           return output = input / 10;
+           return input / 10;
         }
         else{
-           return output = input*10;
+           return input*10;
         }
     }
     public double CMandM(){
         if(way == true){
-            return output = input / 100;
+            return input / 100;
         }
         else{
-            return output = input*100;
+            return input*100;
         }
     }
     public double MandKM(){
         if(way==true){
-            return output = input /1000;
+            return input /1000;
         }
         else{
-            return output = input*1000;
+            return input*1000;
         }
     }
 }
