@@ -6,10 +6,12 @@ inch > feet
 feet > yard
 yard > mile 
 
-feri > centa
+feri > Celsi
+Celsi > kelvin
 
 bit > byte
 byte > kb
 kb > mb
 mb > gb
 gb > tb
+tb > pb
