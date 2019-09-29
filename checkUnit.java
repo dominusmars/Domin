@@ -37,6 +37,12 @@ public class checkUnit{
             return 14;
         }else if(input.equals("pb")){
             return 15;
+        }else if(input.equals("F")){
+            return 16;
+        }else if(input.equals("C")){
+            return 17;
+        }else if(input.equals("Kel")){
+            return 18;
         }
         return 0;
     }
