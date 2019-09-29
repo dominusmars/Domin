@@ -80,7 +80,6 @@ public class Main {
                     start -= 1;
                 }
                 for (int i = 1; i <= loop; i++) {
-                    //System.out.println("start: " +start+" measure: "+ measure + " loop: "+ loop);
                     ConvertData data = new ConvertData(measure, way);
                     switch (start) {
                     case 9:
@@ -120,7 +119,6 @@ public class Main {
                 }
                 for (int i = 1; i <= loop; i++) {
                     Temp temp = new Temp(measure, way);
-                    //System.out.println("start: " +start+" measure: "+ measure + " loop: "+ loop + " Way: "+ way);
                     switch(start){
                         case 16:
                         measure = temp.FeraandCels();
@@ -136,7 +134,6 @@ public class Main {
                             start -= 1;
                         }
                     }
-                    //System.out.println("start: " +start+" measure: "+ measure + " loop: "+ loop + " Way: "+ way);
                 }
                 System.out.println("Your new measurement is: " + measure + " " + convert);
 
@@ -151,17 +148,13 @@ public class Main {
         boolean way = true;
         int loop = Math.abs(start - goal);
         if (start > goal) {
-            System.out.println(measure + " " + start + " " + goal);
             way = false; // false = up the ladder, true = down the ladder
             start -= 1;
-            System.out.println("start: " + start);
 
         }
         int i;
-        // System.out.println(way + " this is way" );
         if (way == false) {
             i = 1;
-            System.out.println("i: " + i + " " + loop);
         } else {
             i = 1;
         }
