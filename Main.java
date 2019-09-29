@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try {
+        try { 
             // Inputs the first measurement
             System.out.println("Please enter the measurement.Format X unit (Length, Temperature, or Data):");
             Scanner measurement = new Scanner(System.in);
@@ -144,7 +144,7 @@ public class Main {
         } catch (Exception e) {
             System.out.println("YOU IDIOT!!!");
         }
-        // main(args);
+        main(args);
     }
 
     public static void Length(int start, double measure, int goal, String convert) {
