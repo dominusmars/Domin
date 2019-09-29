@@ -14,29 +14,29 @@ public class checkUnit{
         }else if(input.equals("m")){
             return 3;
         }else if(input.equals("km")){
-            return 3;
-        }else if(input.equals("inch")){
             return 4;
-        }else if(input.equals("feet")){
+        }else if(input.equals("inch")){
             return 5;
-        }else if(input.equals("yard")){
+        }else if(input.equals("feet")){
             return 6;
-        }else if(input.equals("mile")){
+        }else if(input.equals("yard")){
             return 7;
-        }else if(input.equals("bit")){
+        }else if(input.equals("mile")){
             return 8;
-        }else if(input.equals("byte")){
+        }else if(input.equals("bit")){
             return 9;
-        }else if(input.equals("kb")){
+        }else if(input.equals("byte")){
             return 10;
-        }else if(input.equals("mb")){
+        }else if(input.equals("kb")){
             return 11;
-        }else if(input.equals("gb")){
+        }else if(input.equals("mb")){
             return 12;
-        }else if(input.equals("tb")){
+        }else if(input.equals("gb")){
             return 13;
-        }else if(input.equals("pb")){
+        }else if(input.equals("tb")){
             return 14;
+        }else if(input.equals("pb")){
+            return 15;
         }
         return 0;
     }

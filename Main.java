@@ -27,17 +27,29 @@ public class Main{
            
             //here we start the maths! 
             int loop = Math.abs(start - goal);
-            if(1 >= start && start <= 7){
-                System.out.println(measure +" "+ start +" "+ goal +" "+loop);
-                if((start > 3 && goal < 4) || (start < 4 && goal > 3)){
-                    System.out.println(measure +" "+ start);
+            if(0 < start && start < 9){
+                if(!(start > 3 && goal < 5) || !(start < 5 && goal > 3)){
                     if (start>= goal){
-                        way = false;
+                        way = false; // false = up the ladder, true = down the ladder
+                       // System.out.println("start: " + start);
                         start -= 1;
+                        
                     }
-                    for(int i = 0; i <= loop;i++){
+                    int i;
+                   // System.out.println(way + " this is way" );
+                    if(way == false){
+                        i = 0;
+                        System.out.println("i: " + i +" "+ loop);
+                    }
+                    else{
+                        i = 1;
+                        //System.out.println("i: " + i);
+                    }
+                   // System.out.println(measure +" start:"+ start +" goal:"+ goal +" loop:"+loop);
+                    for(;i <= loop;i++){
                         Metric Hold = new Metric(measure,way);
                         Imperial Holds = new Imperial(measure,way);
+                        System.out.println(measure +" "+ start);
                         switch(start){
                             case 1:
                             measure = Hold.MMandCM();
@@ -48,28 +60,33 @@ public class Main{
                             case 3:
                             measure = Hold.MandKM();
                             break;
-                            case 4:
+                           // case 4:
+                           // measure = Holds.();
+                          //  break;
+                            case 5:
                             measure = Holds.InchandFeet();
                             break;
-                            case 5:
+                            case 6:
                             measure = Holds.FeetandYards();
                             break;
-                            case 6:
+                            case 7:
                             measure = Holds.YardsandMiles();
                             break;
-                        
                         }
-                        System.out.println(measure);
+                        if(way == true){
+                            start += 1;
+                        }
+                        else{
+                            start -= 1;
+                        }
+                        
                     }
+                    System.out.println("Your new measurement is: " + measure + " " + convert);
                 }
                     
-            }else if(8 =< unit.numberUnit() && unit.numberUnit() =< 14){
-
-            }
-            
-        
-
-            
+            }else if(7 < unit.numberUnit() && unit.numberUnit() < 15){
+                
+            }            
         }
         catch(Exception e){
             System.out.println("YOU IDIOT!!!");
