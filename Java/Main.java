@@ -3,13 +3,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        try { 
+        try {
             // Inputs the first measurement
-            System.out.println("Please enter the measurement.Format X unit (Length, Temperature, or Data):");
+            // System.out.println("Please enter the measurement.Format X unit (Length,
+            // Temperature, or Data):");
             Scanner measurement = new Scanner(System.in);
             String frt = measurement.nextLine();
             // asks the user what they want to convert it to
-            System.out.println("Please enter the unit you want to convert it to:");
+            // System.out.println("Please enter the unit you want to convert it to:");
             String convert = measurement.nextLine();
             String input[] = frt.split(" ", 2); // splits the input to an array
             double measure = Double.parseDouble(input[0]); // doubles the inputted number
@@ -110,8 +111,8 @@ public class Main {
                         }
                     }
                 }
-                System.out.println("Your new measurement is: " + measure + " " + convert);
-            }else if(15 < unit.numberUnit() && unit.numberUnit() <19){
+                System.out.println(measure);
+            } else if (15 < unit.numberUnit() && unit.numberUnit() < 19) {
                 int loop = Math.abs(start - goal);
                 if (start > goal) {
                     way = false;
@@ -119,11 +120,11 @@ public class Main {
                 }
                 for (int i = 1; i <= loop; i++) {
                     Temp temp = new Temp(measure, way);
-                    switch(start){
-                        case 16:
+                    switch (start) {
+                    case 16:
                         measure = temp.FeraandCels();
                         break;
-                        case 17:
+                    case 17:
                         measure = temp.CelsandKel();
                         break;
                     }
@@ -135,13 +136,13 @@ public class Main {
                         }
                     }
                 }
-                System.out.println("Your new measurement is: " + measure + " " + convert);
+                System.out.println(measure);
 
             }
         } catch (Exception e) {
             System.out.println("YOU IDIOT!!!");
         }
-        main(args);
+        // main(args);
     }
 
     public static void Length(int start, double measure, int goal, String convert) {
@@ -190,7 +191,7 @@ public class Main {
                 }
             }
         }
-        System.out.println("Your new measurement is: " + measure + " " + convert);
+        System.out.println(measure);
     }
 
 }

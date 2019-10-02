@@ -28,7 +28,7 @@ public class Length{
                    // System.out.println(way + " this is way" );
                     if(way == false){
                         i = 0;
-                        System.out.println("i: " + i +" "+ loop);
+                        //System.out.println("i: " + i +" "+ loop);
                     }
                     else{
                         i = 1;
