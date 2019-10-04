@@ -32,11 +32,9 @@ public class ConvertImpandMet extends Convert {
 
     public double MileandKM() {
         if (convert == true) {
-            // System.out.println(input/1.609344);
             return input / 1.609344;
 
         } else {
-            // System.out.println(input*1.609344);
             return input * 1.609344;
 
         }

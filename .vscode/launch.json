@@ -1,5 +1,13 @@
 {
     "configurations": [
+        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "_.Java.Main",
+            "projectName": "Domin_294c70bc"
+        },
         {
             "type": "java",
             "name": "CodeLens (Launch) - Main",

@@ -38,7 +38,7 @@
             // convertNum
             // 
             this.convertNum.AutoSize = true;
-            this.convertNum.Location = new System.Drawing.Point(47, 42);
+            this.convertNum.Location = new System.Drawing.Point(12, 42);
             this.convertNum.Name = "convertNum";
             this.convertNum.Size = new System.Drawing.Size(35, 13);
             this.convertNum.TabIndex = 7;
@@ -55,6 +55,7 @@
             this.ConvertUnit.Name = "ConvertUnit";
             this.ConvertUnit.Size = new System.Drawing.Size(121, 21);
             this.ConvertUnit.TabIndex = 6;
+            this.ConvertUnit.SelectedIndexChanged += new System.EventHandler(this.ConvertUnit_SelectedIndexChanged);
             // 
             // numUnit
             // 
@@ -74,6 +75,8 @@
             this.frtNum.Name = "frtNum";
             this.frtNum.Size = new System.Drawing.Size(100, 20);
             this.frtNum.TabIndex = 4;
+            this.frtNum.TextChanged += new System.EventHandler(this.frtNum_TextChanged);
+            this.frtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frtNum_KeyPress_1);
             // 
             // btnMain
             // 
@@ -89,6 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(257, 109);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.convertNum);
@@ -98,7 +102,6 @@
             this.Name = "Tempature";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConvertUnits";
-            this.Load += new System.EventHandler(this.Tempature_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

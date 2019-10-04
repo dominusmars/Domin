@@ -20,21 +20,16 @@ public class Length{
                 if(!((start > 3 && goal < 5) || (start < 5 && goal > 3))){
                     if (start>= goal){
                         way = false; // false = up the ladder, true = down the ladder
-                       // System.out.println("start: " + start);
                         start -= 1;
                         
                     }
                     int i;
-                   // System.out.println(way + " this is way" );
                     if(way == false){
                         i = 0;
-                        //System.out.println("i: " + i +" "+ loop);
                     }
                     else{
                         i = 1;
-                        //System.out.println("i: " + i);
                     }
-                   // System.out.println(measure +" start:"+ start +" goal:"+ goal +" loop:"+loop);
                     for(;i <= loop;i++){
                         Metric Hold = new Metric(measure,way);
                         Imperial Holds = new Imperial(measure,way);
@@ -49,9 +44,6 @@ public class Length{
                             case 3:
                             measure = Hold.MandKM();
                             break;
-                           // case 4:
-                           // measure = Holds.();
-                          //  break;
                             case 5:
                             measure = Holds.InchandFeet();
                             break;
@@ -70,7 +62,6 @@ public class Length{
                         }
                         
                     }
-                    System.out.println("Your new measurement is: " + measure + " " + convert);
                 }else{
                     boolean direction = false;
                     if (0 < start && start < 5){

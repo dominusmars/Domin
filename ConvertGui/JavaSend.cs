@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Text;
 using System.Diagnostics;
+using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
+using System.Security.Policy;
 namespace ConvertGui { 
     internal class JavaSend {
         private readonly double frtNum;
@@ -11,12 +16,24 @@ namespace ConvertGui {
             this.frtUnit = frtUnit;
             this.convertUnit = ConvertUnit;
         }
-        public double JavaInput()
+        public String JavaInput()
         {
-            var process = System.Diagnostics.Process.Start(new ProcessStartInfo { RedirectStandardInput = true, RedirectStandardOutput = true, UseShellExecute = false, FileName = @"/c C:\Users\OneandOnly\Documents\Projects\Domin\Java\Main.java" });
+            //OpenFileDialog openFile = new OpenFileDialog();
+           // openFile.InitialDirectory = "\\Resources\\ConvertUnits.jar";
+            String filename = Application.StartupPath + "\\Resources\\ConvertUnits.jar";
+            var process = new Process();
+            process.StartInfo = new ProcessStartInfo(){
+                RedirectStandardInput = true ,
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                FileName = "javaw"
+            };
+            process.StartInfo.Arguments = " -jar " + filename;
+            process.Start();
+            process.EnableRaisingEvents = false;
             process.StandardInput.WriteLine(frtNum + " " + frtUnit);
             process.StandardInput.WriteLine(convertUnit);
-            var response = double.Parse(process.StandardOutput.ReadLine());
+            var response = process.StandardOutput.ReadLine();
             return response;
         }
 

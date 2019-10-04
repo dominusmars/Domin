@@ -41,6 +41,7 @@
             this.frtNum.Name = "frtNum";
             this.frtNum.Size = new System.Drawing.Size(100, 20);
             this.frtNum.TabIndex = 0;
+            this.frtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frtNum_KeyPress_1);
             // 
             // numUnit
             // 
@@ -75,6 +76,7 @@
             this.ConvertUnit.Name = "ConvertUnit";
             this.ConvertUnit.Size = new System.Drawing.Size(121, 21);
             this.ConvertUnit.TabIndex = 2;
+            this.ConvertUnit.SelectedIndexChanged += new System.EventHandler(this.ConvertUnit_SelectedIndexChanged);
             // 
             // convertNum
             // 

@@ -18,7 +18,7 @@ namespace ConvertGui
             InitializeComponent();
 
         }
-
+        
         private void btn_Length_Click(object sender, EventArgs e)
         {
             Length length = new Length();

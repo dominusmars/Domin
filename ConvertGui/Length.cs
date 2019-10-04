@@ -19,21 +19,32 @@ namespace ConvertGui
 
         }
 
-        private void Length_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnMain_Click(object sender, EventArgs e)
         {
             MainMenu main = new MainMenu();
             main.Show();
             Hide();
+        }
+        private void ConvertUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            double frtNumber = double.Parse(frtNum.Text);
+            String frtsUnit = numUnit.Text;
+            if (frtNumber != 0 && frtsUnit != "")
+            {
+                String ConvertUnits = ConvertUnit.Text;
+                JavaSend javaSend = new JavaSend(frtNumber, frtsUnit, ConvertUnits);
+                String value = javaSend.JavaInput();
+                convertNum.Text = value;
+            }
+        }
+
+        private void frtNum_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

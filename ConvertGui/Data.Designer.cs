@@ -43,7 +43,6 @@
             this.convertNum.Size = new System.Drawing.Size(35, 13);
             this.convertNum.TabIndex = 7;
             this.convertNum.Text = "label1";
-            this.convertNum.Click += new System.EventHandler(this.convertNum_Click);
             // 
             // ConvertUnit
             // 
@@ -84,6 +83,7 @@
             this.frtNum.Name = "frtNum";
             this.frtNum.Size = new System.Drawing.Size(100, 20);
             this.frtNum.TabIndex = 4;
+            this.frtNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frtNum_KeyPress);
             // 
             // btnMain
             // 
